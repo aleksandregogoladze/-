@@ -1,119 +1,148 @@
 <!DOCTYPE html>
-<html lang="ka">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Turning - ფილმი</title>
+    <title>Game Store</title>
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #1c1c1c; /* მუქი ფონისთვის */
-            color: #eaeaea; /* ტექსტისთვის ბაცი თეთრი */
             margin: 0;
             padding: 0;
+            background-color: #e0f7fa;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
         }
-
-        header {
-            background-color: #111; /* მუქი შავი */
-            color: #e74c3c; /* წითელი ტონი სათაურებისთვის */
+        .header {
+            background-color: #d1c4e9;
             padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .header a {
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+            margin: 0 10px;
+        }
+        .header a:hover {
+            color: yellow;
+        }
+        .title {
             text-align: center;
-        }
-
-        header h1 {
-            margin: 0;
-            font-size: 2.5em;
-            text-shadow: 2px 2px 5px #000; /* მცირე ჩრდილი */
-        }
-
-        section {
-            margin: 20px;
+            background-color: #d1c4e9;
             padding: 20px;
-            background-color: #2a2a2a; /* მუქი ნაცრისფერი ბლოკისთვის */
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.7); /* ჩრდილი */
+            font-size: 24px;
+            font-weight: bold;
         }
-
-        h2 {
-            font-size: 2em;
-            color: #e74c3c; /* წითელი ფერი სათაურებისთვის */
-            border-bottom: 2px solid #e74c3c; /* ხაზის დამატება */
-            padding-bottom: 5px;
+        .games {
+            display: flex;
+            justify-content: space-around;
+            padding: 20px;
+            flex: 1;
         }
-
-        p {
-            font-size: 1.1em;
-            line-height: 1.6;
-            color: #eaeaea;
-        }
-
-        img {
-            max-width: 100%;
-            height: auto;
-            border-radius: 8px;
-            display: block;
-            margin: 20px auto;
-            border: 2px solid #e74c3c; /* წითელი საზღვარი */
-        }
-
-        .movie-info div {
-            color: #eaeaea; /* ტექსტის ფერი */
-        }
-
-        footer {
-            background-color: #111;
-            color: #eaeaea;
+        .game {
             text-align: center;
+            background: #fff;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            width: 20%;
             padding: 10px;
-            font-size: 0.9em;
-        }  
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .game img {
+            max-width: 100%;
+            border-radius: 8px;
+        }
+        .game .price {
+            text-decoration: line-through;
+            color: red;
+        }
+        .game .discounted-price {
+            color: green;
+            font-weight: bold;
+        }
+        .footer {
+            background-color: #d1c4e9;
+            padding: 20px;
+            text-align: center;
+            color: #333;
+        }
+        .services-btn {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            background-color: #d1c4e9;
+            color: #333;
+            font-weight: bold;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            text-decoration: none;
+        }
+        .services-btn:hover {
+            background-color: yellow;
+            color: #333;
+        }
+        .tbc-logo {
+            position: fixed;
+            bottom: 10px;
+            right: 10px;
+            height: 100px;
+            width: auto;
+        }
     </style>
 </head>
 <body>
-
-    <header>
-        <h1>ფილმი "The Turning" (2020)</h1>
-    </header>
-
-    <section>
-        <h2>ფილმის შესახებ</h2>
-        <p>
-            "The Turning" არის 2020 წლის ამერიკული სუპერუტანზური საშინელებათა ფილმი, რომლის რეჟისორია ფლორია სიგისმონდია და დაფუძნებულია ჰენრი ჯეიმსის 1898 წლის ნოველაზე "The Turn of the Screw".
-            ფილმი მოგვითხრობს ახალგაზრდა აღმზრდელის ისტორიას, რომელიც hires-დება ორი ობოლი ბავშვის შესანახად ერთ მიჩვეულ სახლში, სადაც საშინელი და ამოუცნობი მოვლენები იწყება.
-        </p>
-    </section>
-
-    <section>
-        <div class="movie-info">
-            <div>
-                <h3>მოკლე შინაარსი</h3>
-                <p>
-                    კეიტი (მაკენზი დევის) არის აღმზრდელი, რომელსაც უყალიბებენ ახალ სამუშაოზე, რათა იზრუნოს ორი ობოლი ბავშვისთვის, რომლებიც ცხოვრობენ მარტოსულ სახლში მენში.
-                    როდესაც ის ცდილობს ფლორა (ბრუკლინ პრინსი) და მილესი (ფინი ვოლფჰარდი) იზრუნოს, ის იწყებს გამონაკლისის აღმოჩენას და სულ უფრო საშინელ supernatural მოვლენებს იკვლევს.
-                </p>
-            </div>
-
-            <div>
-                <h3>მსახიობები</h3>
-                <ul>
-                    <li><strong>მაკენზი დევის</strong> - კეიტი</li>
-                    <li><strong>ფინი ვოლფჰარდი</strong> - მილესი</li>
-                    <li><strong>ბრუკლინ პრინსი</strong> - ფლორა</li>
-                    <li><strong>ჯოელის რიჩარდსონი</strong> - მერი გროსი</li>
-                </ul>
-            </div>
+    <div class="header">
+        <a href="./ჩვენს შესახებ/index.html" id="about-us">ჩვენს შესახებ</a>
+        <a href="./კონტაქტი/index.html" id="contact">კონტაქტი</a>
+        <a href="./სიახლეები/index.html" id="news">სიახლეები</a>
+    </div>
+    <div class="title">Game Zona</div>
+    <div class="games">
+        <div class="game">
+            <a href="./html/gta 5/index.html">
+                <img src="https://upload.wikimedia.org/wikipedia/en/a/a5/Grand_Theft_Auto_V.png" alt="GTA V">
+                <h3>GTA V</h3>
+                <p class="price">$29.99</p>
+                <p class="discounted-price">$19.99</p>
+            </a>
         </div>
-    </section>
-
-    <section>
-        <h3>ოფიციალური პოსტერი</h3>
-        <img src="C:\Users\sgogo\Desktop\პრეზენტაცია/MV5BNGMwNTNkMjUtZjU3OS00NzU5LWIxOTUtOWIzNGVkZmNjNjQ0XkEyXkFqcGc@._V1_.jpg" width="500
-        px">
-    </section>
-
-    <footer>
-        <p>&copy; 2024 ფილმი "The Turning". ყველა უფლება დაცულია. ფილმის საყურებლად დააწექი აქ (ლინკი)</p>
-    </footer>
-
+        <div class="game">
+            <a href="./html/index.html">
+                <img src="https://upload.wikimedia.org/wikipedia/en/4/44/Red_Dead_Redemption_II.jpg" alt="Red Dead Redemption 2">
+                <h3>Red Dead Redemption 2</h3>
+                <p class="price">$59.99</p>
+                <p class="discounted-price">$39.99</p>
+            </a>
+        </div>
+        <div class="game">
+            <a href="./html/Far Cry 5/index.html">
+                <img src="html/Far_Cry_5_resized_284x351 (1).jpg" alt="Far Cry 5">
+                <h3>Far Cry 5</h3>
+                <p class="price">$49.99</p>
+                <p class="discounted-price">$29.99</p>
+            </a>
+        </div>
+        <div class="game">
+            <a href="./html/CS GO/index.html">
+                <img src="html/CSGOcover_resized.jpg" alt="CS GO">
+                <h3>CS GO</h3>
+                <p class="price">$14.99</p>
+                <p class="discounted-price">$9.99</p>
+            </a>
+        </div>
+    </div>
+    <a href="./სერვისები/indedx.html" class="services-btn">სერვისები</a>
+    <img src="https://iteq.ge/image/data/tbc-logo-1024x683.png" alt="TBC ბანკის ლოგო" class="tbc-logo">
+    <div class="footer">
+        <p>ელფოსტა: aleksandre.gogoladzete04@geolab.edu.ge</p>
+        <p>ტელეფონის ნომერი: 599990602</p>
+    </div>
 </body>
 </html>
